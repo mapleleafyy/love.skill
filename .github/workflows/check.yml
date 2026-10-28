@@ -1,0 +1,29 @@
+name: Check project
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  python-checks:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7.0.1
+      - name: Set up Python
+        uses: actions/setup-python@v7.1.0
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run local preprocessing tests
+        run: python -B -m unittest discover -s tests -v
+      - name: Import the synthetic example
+        run: python -B scripts/prepare_chat.py --input examples/demo.json --self 我 --peer 对方 --output-dir "${{ runner.temp }}/love-skill-demo"

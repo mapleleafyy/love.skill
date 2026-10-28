@@ -1,0 +1,34 @@
+# Real conversations, profiles, screenshots and local analysis.
+private/
+.private/
+chats/
+profiles/
+screenshots/
+context.json
+self-samples.json
+style-stats.json
+style-profile.md
+!references/style-profile.md
+
+# Secrets and local stores.
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+*.log
+
+# Local tooling and release bundles.
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+*.zip
+.DS_Store
+Thumbs.db

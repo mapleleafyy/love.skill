@@ -1,0 +1,4 @@
+interface:
+  display_name: "love.skill · 恋爱情圣"
+  short_description: "学习本人语气，根据聊天证据分析对方好感与关系投入，提供自然回复和下一步建议"
+  default_prompt: "用 $love-sage 读取我提供的聊天，分析对方态度与好感证据，再按我的语气给下一步建议和回复草稿。"
